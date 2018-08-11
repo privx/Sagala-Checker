@@ -35,6 +35,7 @@ tatsumi(){
     livena=$(echo $curlnya | grep -Po '(?<="msg":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ ! $livena =~ "DIE" ]]; then
         printf "${HIJAU}[LIVE] $1 [$waktu]\n";
+        echo "[LIVE] $1" >> live.txt
         printf "${NORMAL}"
     else
         printf "${RED}[DIE] $1 [$waktu]\n";
