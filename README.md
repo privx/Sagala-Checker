@@ -14,7 +14,9 @@ save to txt dalam 1 folder dengan file checker
 <h1>How to Use</h1><br>
 CC Checker    : bash file.sh<br>
 CC Apple-Checker    : bash file.sh<br>
-
+Thanx For <br>
+Monkey B Luffy & BerdendangC0de<br>
 Contact Me : <br>
 email : nako48@cyber00t.biz<br>
 facebook : https://www.facebook.com/nako48<br>
+
