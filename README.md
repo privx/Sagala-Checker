@@ -1,5 +1,21 @@
 # Sagala-Checker
 Checker Kontol LIVE<br>
+         ####################################
+         ####################################
+         #######                      #######
+         #######                      #######
+         #######                      #######
+         ###############      ###############
+         ###############      ###############
+         ###############      ###############
+         ###############      ###############
+         #######    ####      ####    #######
+         #######    ####      ####    #######
+         #######    ##############    #######
+         #######    ##############    #######
+         #######                      #######
+         ####################################
+         ####################################<br>
 <h1>HOW TO INSTALL</h1>
 <br>
 git clone https://github.com/nako48/Sagala-Checker/
@@ -10,12 +26,16 @@ Format list <br>
 CC Checker    : ccnum:bulan:tahun:ccv<br>
 Apple-Checker : email<br>
 PHD Account Checker : email:pass<br>
+MyTelkomsel Account Checker : email:pass<br>
+Amazon Valid Email Checker : email<br>
 save to txt dalam 1 folder dengan file checker
 
 <h1>How to Use</h1><br>
 CC Checker    : bash file.sh<br>
 CC Apple-Checker    : bash file.sh<br>
 PHD Account Checker   : bash file.sh<br>
+MyTelkomsel Account Checker  : bash file.sh<br>
+Amazon Valid Email Checker   : bash file.sh<br>
 <br>
 Thanx For <br>
 Monkey B Luffy & BerdendangC0de<br>
