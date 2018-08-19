@@ -23,7 +23,3 @@
 $ git clone https://github.com/nako48/Sagala-Checker/
 </br>
 $ cd Sagala-Checker
-</br>
-$ chmod +x scan.sh
-</br>
-$ ./scan.sh
