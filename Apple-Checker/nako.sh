@@ -31,7 +31,7 @@ tatsumi(){
     ua=$(cat ua.txt | sort -R | head -1)
     duration=$SECONDS
     SECONDS=0
-    curlnya=$(curl -s "http://api.nakocoders.org/apple/index.php?emailna=$1" -L)
+    curlnya=$(curl -s "http://48.nakocoders.org/apple/index.php?emailna=$1" -L)
     livena=$(echo $curlnya | grep -Po '(?<="msg":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ ! $livena =~ "DIE" ]]; then
         printf "${HIJAU}[LIVE] $1 [$waktu]\n";
