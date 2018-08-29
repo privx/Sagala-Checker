@@ -1,9 +1,9 @@
 #!/bin/bash
+
 waktu=$(date '+%Y-%m-%d %H:%M:%S')
 HIJAU='\033[0;32m'
 MERAH='\033[0;31m'
 NORMAL='\033[0m'
-CYAN='\033[0;36m'
 BIRU='\033[0;34m'
 PUTIH='\033[1;37m'
 header(){
@@ -32,24 +32,24 @@ printf "${HIJAU}
 }
 tatsumi(){
 		site="${1}"
-		ext=".php|.phtml|.php3|.phpgif|.php.jpg|.php.pjpg|.php.jpg|.pht" #jenis file
+		ext=".php|.phtml|.php3|.phpgif|.php.jpg|.php.pjpg|.php.jpg|.pht"
 		CekFile=$(echo $site)
 		if [[ ! $CekFile =~ ($ext) ]]; then
-			printf "${MERAH}Skip, Not Found => ${CYAN}$site\n"
+			printf "${MERAH}Skip, Not Found => $site\n"
 		else
 			ngecurl=$(curl -s -I "$site")
 			if [[ ! $ngecurl =~ "200 OK" ]]; then
-				printf "${MERAH}NOT FOUND => ${CYAN}$site\n"
+				printf "${MERAH}NOT FOUND => $site\n"
 			else
 				ngecek=$(curl -s "$site" -L)
-				title="wso|HAWKZONE|lite|shell|Linux|backdoor|Tatsumi|shells|cyber|team|hacker" #set your title backdoor!
+				title="wso|HAWKZONE|lite|shell|Linux|backdoor|Tatsumi|shells|cyber|team|hacker"
 				ngeganti=$(echo $ngecek | tr [:upper:] [:lower:])
 				if [[ $ngeganti =~ ($title) ]]; then
 					times=$(date +%d-%m-%y)
-					printf "${GREEN}FOUND => $site $kontenID\n"
+					printf "${HIJAU}FOUND => $site \n"
 					echo "$site" >> shell1.txt
 				else
-					printf "${RED}NOT FOUND => $site\n"
+					printf "${MERAH}NOT FOUND => $site\n"
 				fi
 			fi
 		fi
